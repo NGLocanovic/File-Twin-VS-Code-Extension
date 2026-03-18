@@ -1,0 +1,109 @@
+{
+  "name": "file-twin-vscode-extension",
+  "displayName": "File Twin",
+  "description": "Open a mapped twin file based on a configurable naming pattern.",
+  "icon": "resources/extension/file-twin-gemini.png",
+  "license": "MIT",
+  "version": "0.0.1",
+  "publisher": "local-dev",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:fileTwin.openMappedFile"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "fileTwin.openMappedFile",
+        "title": "File Twin: Open Twin File",
+        "shortTitle": "File Twin",
+        "icon": {
+          "light": "resources/light/file-twin.svg",
+          "dark": "resources/dark/file-twin.svg"
+        }
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "fileTwin.openMappedFile",
+          "group": "navigation",
+          "when": "resourceScheme == file"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "fileTwin.openMappedFile",
+          "group": "navigation",
+          "when": "resourceScheme == file"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "command": "fileTwin.openMappedFile",
+          "group": "navigation",
+          "when": "resourceScheme == file"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "fileTwin.openMappedFile",
+          "group": "navigation",
+          "when": "resourceScheme == file"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "File Twin",
+      "properties": {
+        "fileTwin.links": {
+          "type": "array",
+          "default": [
+            [
+              "{name}.ts",
+              "{name}.test.ts"
+            ]
+          ],
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "string",
+              "description": "Filename pattern (supports {name} template or /.../ regex)."
+            }
+          },
+          "description": "Symmetric links as [patternA, patternB, ...]. File Twin resolves connected files recursively."
+        },
+        "fileTwin.searchIncludeGlob": {
+          "type": "string",
+          "default": "**",
+          "description": "Optional include glob scope for workspace search. File Twin appends '/**/<targetFileName>'."
+        },
+        "fileTwin.searchExcludeGlob": {
+          "type": "string",
+          "default": "",
+          "description": "Optional exclude glob for workspace search."
+        },
+        "fileTwin.openInSplit": {
+          "type": "boolean",
+          "default": false,
+          "description": "Open matched target file in split editor (beside the current editor)."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "rm -rf out && tsc -p ./",
+    "test": "npm run compile && node --test out/*.test.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.4.0"
+  }
+}

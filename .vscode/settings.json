@@ -1,0 +1,10 @@
+{
+	"fileTwin.links": [
+		["db.proc_{name}.sql", "db.table_{name}.sql", "module.{name}.sql"],
+		["db.proc_{name}.sql", "db.{name}.sql"],
+		["config.module_{name}.sql", "config.{name}.sql"]
+	],
+	"fileTwin.searchIncludeGlob": "**",
+	"fileTwin.searchExcludeGlob": "**/node_modules/**",
+	"fileTwin.openInSplit": true
+}
