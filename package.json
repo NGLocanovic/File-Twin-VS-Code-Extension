@@ -4,7 +4,11 @@
   "description": "Open a mapped twin file based on a configurable naming pattern.",
   "icon": "resources/extension/file-twin-gemini.png",
   "license": "MIT",
-  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NGLocanovic/File-Twin-VS-Code-Extension.git"
+  },
+  "version": "0.0.2",
   "publisher": "local-dev",
   "engines": {
     "vscode": "^1.85.0"

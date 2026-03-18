@@ -1,5 +1,29 @@
-/.DS_Store
-/DB_ORBIS_CORE
-/File Twin VS Code Extension.code-workspace
-/docs
-/file-twin-vscode-extension-0.0.1.vsix
+# OS files
+.DS_Store
+
+# Dependency directories
+node_modules/
+
+# Build output
+out/
+*.tsbuildinfo
+
+# Packaged extension artifacts
+*.vsix
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local editor/workspace files
+.vscode/settings.json
+*.code-workspace
+
+# Local sample/private data
+DB_ORBIS_CORE/
+
+# Temporary files
+*.tmp
+*.swp

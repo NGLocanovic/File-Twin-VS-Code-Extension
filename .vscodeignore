@@ -1,0 +1,12 @@
+.DS_Store
+.gitignore
+.vscode/**
+docs/**
+src/**
+DB_ORBIS_CORE/**
+smoke-test-fixtures/**
+*.code-workspace
+tsconfig.json
+package-lock.json
+out/*.test.js
+out/*.map
