@@ -27,3 +27,6 @@ DB_ORBIS_CORE/
 # Temporary files
 *.tmp
 *.swp
+
+# Deisgn files
+*.afdesign
